@@ -26,6 +26,7 @@
     "@elastic/elasticsearch": "^7.6.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "debug": "^4.1.1",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
