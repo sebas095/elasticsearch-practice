@@ -1,0 +1,30 @@
+{
+  "index": "elasticsearch_index_demo_elastic",
+  "properties": {
+    "summary": {
+      "type": "text",
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "nid": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "text",
+      "boost": 2,
+      "fields": {
+        "keyword": {
+          "type": "keyword",
+          "ignore_above": 256
+        }
+      }
+    },
+    "type": {
+      "type": "keyword"
+    }
+  }
+}
