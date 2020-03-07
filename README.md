@@ -37,7 +37,7 @@ npm run start:seed
 #### Run server
 
 ```bash
-npm run start
+npm start
 ```
 
 Url: `http://localhost:3000/`
