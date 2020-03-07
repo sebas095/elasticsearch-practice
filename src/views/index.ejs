@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Elasticsearch demo</title>
+</head>
+
+<body>
+    <h1>Node.js Elasticsearch demo</h1>
+    <div id="search_container">
+        <form action="/" id="search_form" method="GET">
+            <div id="search_box">
+                <input type="text" id="search" name="search" value="<%= searchString %>" />
+                <input type="hidden" id="type" name="type" value="<%= searchType %>" />
+                <input type="submit" value="Search" />
+            </div>
+            <div id="facets">
+                <span>Type:</span>
+                <ul>
+                    <% for (const aggregation of aggregations) { %>
+                    <li>
+                        <a href="" class="facet" data-value="<%= aggregation.key %>">
+                            <%= aggregation.key %>(<%= aggregation.doc_count %>)
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </form>
+    </div>
+    <div id="total">
+        <h2>Found <%= total %> results</h2>
+    </div>
+    <div id="hits">
+        <% for (const hit of hits) { %>
+        <h2><%= hit._source.title %></h2>
+        <% } %>
+    </div>
+    <script src="/js/facets.js"></script>
+</body>
+
+</html>
